@@ -1,0 +1,30 @@
+[project]
+name = "zus"
+version = "0.1.0"
+description = "Zack's Useful Switch"
+authors = [
+    { name = "ZackaryW", email = "gitzackw@gmail.com" }
+]
+dependencies = [
+    "zuu>=2.1.0",
+    "click>=8.1.7",
+    "requests>=2.32.3",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pytest>=8.3.3",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/zus"]
