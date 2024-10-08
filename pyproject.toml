@@ -9,6 +9,8 @@ dependencies = [
     "zuu>=2.1.0",
     "click>=8.1.7",
     "requests>=2.32.3",
+    "toml>=0.10.2",
+    "pyyaml>=6.0.2",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"

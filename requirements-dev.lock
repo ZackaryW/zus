@@ -28,7 +28,11 @@ packaging==24.1
 pluggy==1.5.0
     # via pytest
 pytest==8.3.3
+pyyaml==6.0.2
+    # via zus
 requests==2.32.3
+    # via zus
+toml==0.10.2
     # via zus
 urllib3==2.2.3
     # via requests

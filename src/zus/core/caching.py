@@ -159,3 +159,11 @@ class GitCacher(metaclass=absoluteSingleton()):
             **queryDict,
             fuzzyMatch=True
         )
+    
+GLOBAL_CACHER = GitCacher()
+
+def resolve_path(path : str):
+    if not path.startswith("@") and os.path.exists(path):
+        return path
+    path = path.removeprefix("@")
+    return GLOBAL_CACHER.singleStringQuery(path)

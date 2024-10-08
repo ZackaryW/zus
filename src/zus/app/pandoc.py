@@ -47,7 +47,7 @@ def resolve_template_type(string: str):
 
 
 PANDOC_CMD = (
-    'pandoc {input_md} -o {outname} -f markdown -t {outtype} --template="{template}"'
+    'pandoc "{input_md}" -o "{outname}" -f markdown -t {outtype} --template="{template}"'
 )
 
 def gen_file(
@@ -57,11 +57,13 @@ def gen_file(
 
     dump_meta(os.path.join(workdir, "input.md"), data)
 
+    cmd = PANDOC_CMD.format(
+        input_md=os.path.join(workdir, "input.md"),
+        outname=os.path.join(workdir, outname),
+        outtype=outtype,
+        template=template,
+    )
+
     os.system(
-        PANDOC_CMD.format(
-            input_md=os.path.join(workdir, "input.md"),
-            outname=os.path.join(workdir, outname),
-            outtype=outtype,
-            template=template,
-        )
+        cmd
     )

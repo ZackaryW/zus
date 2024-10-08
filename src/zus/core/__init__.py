@@ -1,7 +1,5 @@
 import os
 
-__all__ = ["get_app_config_path"]
-
 home_config_path = os.path.join(os.path.expanduser("~"), ".zus")
 
 def get_app_config_path(app: str):

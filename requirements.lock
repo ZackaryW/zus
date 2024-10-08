@@ -20,7 +20,11 @@ colorama==0.4.6
     # via click
 idna==3.10
     # via requests
+pyyaml==6.0.2
+    # via zus
 requests==2.32.3
+    # via zus
+toml==0.10.2
     # via zus
 urllib3==2.2.3
     # via requests
